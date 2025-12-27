@@ -2,33 +2,33 @@ export default function Hero() {
   return (
     <div className="relative">
       {/* Split Hero Layout */}
-      <section className="relative min-h-[85vh] bg-brand-dark flex flex-col md:grid md:grid-cols-2 overflow-hidden">
+      <section className="relative min-h-[calc(100dvh-64px)] md:min-h-[85vh] bg-brand-dark flex flex-col md:grid md:grid-cols-2 overflow-hidden">
 
         {/* Left Side: Content */}
-        <div className="flex flex-col justify-center px-6 py-12 md:p-16 lg:p-24 z-10 text-white order-2 md:order-1">
-          <div className="text-brand-accent font-bold tracking-[0.15em] text-sm md:text-base uppercase mb-4 animate-fade-in-up">
+        <div className="flex flex-col justify-center px-6 py-8 md:p-16 lg:p-24 z-10 text-white order-2 md:order-1 flex-1">
+          <div className="text-brand-accent font-bold tracking-[0.15em] text-xs md:text-base uppercase mb-2 md:mb-4 animate-fade-in-up">
             Winter Collection 2025
           </div>
 
-          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-6">
+          <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl leading-[1.1] mb-4 md:mb-6">
             Redefining <br/>
             <span className="italic">Comfort & Class</span>
           </h1>
 
-          <div className="bangla text-xl md:text-2xl text-slate-300 font-light border-l-4 border-brand-accent pl-4 mb-10">
+          <div className="bangla text-lg md:text-2xl text-slate-300 font-light border-l-4 border-brand-accent pl-4 mb-6 md:mb-10">
             বিলাসবহুল আরাম, যা আপনার প্রতিদিনের সঙ্গী। <br/>
-            <span className="text-base md:text-lg opacity-70 font-sans">(Luxury comfort, your everyday companion)</span>
+            <span className="text-sm md:text-lg opacity-70 font-sans">(Luxury comfort, your everyday companion)</span>
           </div>
 
           <div>
-            <button className="bg-brand-accent text-white px-8 py-4 font-bold text-sm tracking-widest uppercase hover:translate-y-[-2px] hover:shadow-[0_10px_20px_rgba(217,119,6,0.3)] transition-all duration-300">
+            <button className="bg-brand-accent text-white px-6 py-3 md:px-8 md:py-4 font-bold text-xs md:text-sm tracking-widest uppercase hover:translate-y-[-2px] hover:shadow-[0_10px_20px_rgba(217,119,6,0.3)] transition-all duration-300">
               Shop Now
             </button>
           </div>
         </div>
 
         {/* Right Side: Image Placeholder */}
-        <div className="relative bg-slate-800 h-[400px] md:h-full w-full order-1 md:order-2 overflow-hidden group">
+        <div className="relative bg-slate-800 h-[35vh] min-h-[250px] md:h-full w-full order-1 md:order-2 overflow-hidden group">
           {/*
             In a real scenario, use Next.js <Image /> here.
             Using a CSS pattern for the placeholder to match the mockup's "Fusion" feel.
