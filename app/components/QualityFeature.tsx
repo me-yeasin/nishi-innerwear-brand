@@ -50,40 +50,41 @@ export default function QualityFeature() {
           </div>
 
           {/* Right Side: Content */}
-          <div className="flex flex-col space-y-8">
+          <div className="flex flex-col space-y-10 pl-0 md:pl-8">
             <div>
-              <span className="text-brand-accent font-bold tracking-[0.2em] text-xs uppercase mb-2 block">
+              <span className="text-brand-accent font-serif tracking-[0.25em] text-sm uppercase mb-3 block">
                 Quality Assurance
               </span>
-              <h2 className="font-serif text-3xl md:text-5xl text-brand-dark mb-4 leading-tight">
+              <h2 className="font-serif text-4xl md:text-6xl text-brand-dark mb-6 leading-[1.1]">
                 Engineered for <br/>
                 <span className="italic text-brand-accent">Ultimate Comfort</span>
               </h2>
-              <p className="bangla text-xl text-text-muted border-l-4 border-gray-200 pl-4">
+              <p className="bangla text-xl md:text-2xl text-text-muted leading-relaxed opacity-90 max-w-xl">
                 বিলাসবহুল আরাম, যা আপনার প্রতিদিনের সঙ্গী। আমাদের প্রতিটি সুতা বোনা হয়েছে আপনার স্বাচ্ছন্দ্যের কথা ভেবে।
               </p>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-8">
               {features.map((feature, idx) => (
-                <div key={idx} className="flex items-start gap-4 group cursor-pointer hover:bg-bg-light p-4 rounded transition-colors duration-300">
-                  <div className="mt-1 bg-white p-2 rounded shadow-sm border border-gray-100 group-hover:border-brand-accent transition-colors">
+                <div key={idx} className="flex items-start gap-6 group cursor-pointer pl-6 border-l-2 border-gray-100 hover:border-brand-accent transition-all duration-500">
+                  <div className="mt-1 text-brand-dark opacity-50 group-hover:opacity-100 group-hover:text-brand-accent transition-all duration-300 transform group-hover:scale-110">
                     {feature.icon}
                   </div>
                   <div>
-                    <h4 className="font-bold text-brand-dark text-lg flex items-center gap-2">
+                    <h4 className="font-serif text-brand-dark text-xl md:text-2xl mb-1 group-hover:text-brand-accent transition-colors">
                       {feature.title}
-                      <span className="bangla text-sm font-normal text-brand-accent opacity-80">({feature.bangla})</span>
                     </h4>
-                    <p className="text-sm text-text-muted mt-1">{feature.desc}</p>
+                    <div className="bangla text-sm text-brand-accent mb-2 opacity-80">({feature.bangla})</div>
+                    <p className="text-sm text-text-muted leading-relaxed max-w-sm">{feature.desc}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="pt-4">
-              <button className="px-8 py-3 border-2 border-brand-dark text-brand-dark font-bold uppercase tracking-widest text-xs hover:bg-brand-dark hover:text-white transition-all duration-300 cursor-pointer">
-                Discover Technology
+            <div className="pt-6">
+              <button className="group relative px-10 py-4 bg-brand-dark text-white font-bold uppercase tracking-[0.15em] text-xs overflow-hidden cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300">
+                <span className="relative z-10 group-hover:text-white transition-colors duration-300">Discover Technology</span>
+                <span className="absolute inset-0 bg-brand-accent transform translate-y-full transition-transform duration-500 ease-out group-hover:translate-y-0"></span>
               </button>
             </div>
           </div>
