@@ -78,13 +78,13 @@ export default function CustomerReviews() {
                 </div>
                 <div>
                   <h4 className="font-bold text-brand-dark text-sm">{review.name}</h4>
-                  <p className="text-xs text-text-muted">{review.role}</p>
+                  <p className="text-xs text-text-muted mb-1">{review.role}</p>
+                  {review.verified && (
+                    <div className="flex items-center gap-1 text-green-600 bg-green-50 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider w-fit">
+                      <FiCheck className="w-3 h-3" /> Verified
+                    </div>
+                  )}
                 </div>
-                {review.verified && (
-                  <div className="ml-auto flex items-center gap-1 text-green-600 bg-green-50 px-2 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">
-                    <FiCheck className="w-3 h-3" /> Verified
-                  </div>
-                )}
               </div>
 
               {/* Rating */}
