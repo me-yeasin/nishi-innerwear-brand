@@ -5,7 +5,7 @@ export default function Hero() {
       <section className="relative min-h-[calc(100dvh-64px)] md:min-h-[85vh] bg-brand-dark flex flex-col md:grid md:grid-cols-2 overflow-hidden">
 
         {/* Left Side: Content */}
-        <div className="flex flex-col justify-center px-6 py-8 md:p-16 lg:p-24 z-10 text-white order-2 md:order-1 flex-1">
+        <div className="flex flex-col justify-center px-6 py-8 md:p-16 md:pb-48 lg:p-24 lg:pb-56 z-10 text-white order-2 md:order-1 flex-1">
           <div className="text-brand-accent font-bold tracking-[0.15em] text-xs md:text-base uppercase mb-2 md:mb-4 animate-fade-in-up">
             Winter Collection 2025
           </div>
