@@ -23,9 +23,9 @@ export default function Hero() {
           </div>
 
           <div>
-            <button className="group relative cursor-pointer bg-brand-accent text-white px-6 py-3 md:px-8 md:py-4 font-bold text-xs md:text-sm tracking-widest uppercase overflow-hidden transition-all duration-300 hover:shadow-[0_10px_20px_rgba(30,41,59,0.3)]">
-              <span className="relative z-10 group-hover:text-white transition-colors duration-300">Shop Now</span>
-              <span className="absolute inset-0 bg-brand-dark transform translate-y-full transition-transform duration-500 ease-out group-hover:translate-y-0"></span>
+            <button className="group relative cursor-pointer bg-brand-accent text-white px-6 py-3 md:px-8 md:py-4 font-bold text-xs md:text-sm tracking-widest uppercase overflow-hidden transition-all duration-300 hover:shadow-[0_10px_20px_rgba(30,41,59,0.3)] active:scale-95">
+              <span className="relative z-10 group-hover:text-white group-active:text-white transition-colors duration-300">Shop Now</span>
+              <span className="absolute inset-0 bg-brand-dark transform translate-y-full transition-transform duration-500 ease-out group-hover:translate-y-0 group-active:translate-y-0"></span>
             </button>
           </div>
         </div>
