@@ -2,6 +2,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import CategoryShowcase from "./components/CategoryShowcase";
 import QualityFeature from "./components/QualityFeature";
+import SmartBundles from "./components/SmartBundles";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Hero />
       <CategoryShowcase />
       <QualityFeature />
+      <SmartBundles />
 
       {/* Footer Placeholder */}
       <div className="h-20 bg-bg-light"></div>

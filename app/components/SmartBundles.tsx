@@ -1,0 +1,144 @@
+import { FiShoppingBag, FiTag, FiStar } from "react-icons/fi";
+
+export default function SmartBundles() {
+  const bundles = [
+    {
+      id: 1,
+      title: "The Gentleman's Trio",
+      subtitle: "3x Premium Cotton Briefs",
+      bangla: "জেনলম্যানস ট্রায়ো (৩টি ব্রিফ)",
+      price: "1,250",
+      originalPrice: "1,500",
+      save: "Save 17%",
+      rating: 4.9,
+      reviews: 128,
+      tag: "Best Seller",
+      // Placeholder gradients for bundle images
+      bgPattern: "bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-slate-700 via-slate-900 to-black"
+    },
+    {
+      id: 2,
+      title: "Summer Breeze Kit",
+      subtitle: "3x Breathable Vests",
+      bangla: "সামার ব্রিজ কিট (৩টি ভেস্ট)",
+      price: "950",
+      originalPrice: "1,200",
+      save: "Save 20%",
+      rating: 4.8,
+      reviews: 85,
+      tag: "Summer Essential",
+      bgPattern: "bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-gray-200 via-gray-400 to-gray-600"
+    },
+    {
+      id: 3,
+      title: "Couple's Comfort Set",
+      subtitle: "Matching Loungewear Pack",
+      bangla: "কাপল কমফোর্ট সেট",
+      price: "2,500",
+      originalPrice: "3,200",
+      save: "Save 22%",
+      rating: 5.0,
+      reviews: 42,
+      tag: "Trending",
+      bgPattern: "bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-amber-700 via-amber-900 to-black"
+    }
+  ];
+
+  return (
+    <section className="py-20 md:py-32 bg-brand-dark relative overflow-hidden">
+      {/* Background Decorative Elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-brand-accent/5 rounded-full blur-[100px]"></div>
+        <div className="absolute bottom-[-10%] left-[-5%] w-[300px] h-[300px] bg-white/5 rounded-full blur-[80px]"></div>
+      </div>
+
+      <div className="max-w-[1300px] mx-auto px-4 md:px-8 relative z-10">
+
+        {/* Section Header */}
+        <div className="text-center mb-16 md:mb-20">
+          <span className="inline-block px-3 py-1 rounded-full border border-brand-accent/30 text-brand-accent text-xs font-bold tracking-widest uppercase mb-4 bg-brand-accent/5 backdrop-blur-sm">
+            Exclusive Offers
+          </span>
+          <h2 className="font-serif text-3xl md:text-5xl text-white mb-4">
+            Smart Saver Bundles
+          </h2>
+          <p className="bangla text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
+            বেশি কিনুন, বেশি সাশ্রয় করুন। আপনার প্রতিদিনের প্রিমিয়াম কালেকশন এখন বান্ডেল অফারে।
+            <br/>
+            <span className="text-sm font-sans opacity-70">(Buy more, save more. Your daily premium essentials now in bundle offers.)</span>
+          </p>
+        </div>
+
+        {/* Bundles Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {bundles.map((bundle) => (
+            <div
+              key={bundle.id}
+              className="group bg-white rounded-sm overflow-hidden shadow-2xl hover:shadow-[0_20px_40px_-15px_rgba(255,255,255,0.1)] transition-all duration-500 cursor-pointer flex flex-col h-full"
+            >
+              {/* Card Image Area */}
+              <div className={`h-64 relative overflow-hidden ${bundle.bgPattern}`}>
+                {/* Badge */}
+                <div className="absolute top-4 left-4 z-20">
+                  <span className="bg-brand-accent text-white text-xs font-bold px-3 py-1 uppercase tracking-wider shadow-md">
+                    {bundle.tag}
+                  </span>
+                </div>
+
+                {/* Save Tag */}
+                <div className="absolute top-4 right-4 z-20 flex items-center gap-1 bg-white/90 backdrop-blur text-brand-dark text-xs font-bold px-2 py-1 rounded shadow-sm">
+                  <FiTag className="w-3 h-3 text-brand-accent" />
+                  {bundle.save}
+                </div>
+
+                {/* Simulated Product Image (since no assets) */}
+                <div className="absolute inset-0 flex items-center justify-center group-hover:scale-105 transition-transform duration-700">
+                   <span className="text-white/20 font-serif text-8xl font-bold opacity-30 select-none">
+                     {bundle.id}
+                   </span>
+                </div>
+
+                {/* Overlay on Hover */}
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-300"></div>
+              </div>
+
+              {/* Card Content */}
+              <div className="p-6 md:p-8 flex-1 flex flex-col">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="flex text-brand-accent">
+                    {[...Array(5)].map((_, i) => (
+                      <FiStar key={i} className={`w-3 h-3 ${i < Math.floor(bundle.rating) ? "fill-current" : "opacity-30"}`} />
+                    ))}
+                  </div>
+                  <span className="text-xs text-text-muted font-semibold">({bundle.reviews})</span>
+                </div>
+
+                <h3 className="font-serif text-2xl text-brand-dark mb-1 group-hover:text-brand-accent transition-colors">
+                  {bundle.title}
+                </h3>
+                <p className="bangla text-sm text-text-muted mb-4">{bundle.bangla}</p>
+                <p className="text-xs text-text-muted uppercase tracking-wider mb-6 pb-6 border-b border-gray-100 flex-1">
+                  {bundle.subtitle}
+                </p>
+
+                {/* Price & Action */}
+                <div className="flex items-end justify-between">
+                  <div>
+                    <p className="text-xs text-text-muted line-through mb-1">৳ {bundle.originalPrice}</p>
+                    <p className="text-2xl font-bold text-brand-dark">৳ {bundle.price}</p>
+                  </div>
+
+                  <button className="group/btn relative w-12 h-12 bg-brand-dark rounded-full flex items-center justify-center text-white overflow-hidden shadow-lg hover:shadow-brand-accent/30 transition-shadow">
+                     <span className="absolute inset-0 bg-brand-accent translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300"></span>
+                     <FiShoppingBag className="relative z-10 w-5 h-5 group-hover/btn:scale-110 transition-transform" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+}
