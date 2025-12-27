@@ -85,7 +85,7 @@ export default function CategoryShowcase() {
                 </p>
 
                 {/* Button-like Link */}
-                <div className="inline-flex items-center gap-2 text-white font-bold text-sm border-b-2 border-brand-accent pb-1 group-hover:text-brand-accent transition-colors">
+                <div className="inline-flex items-center gap-2 text-white font-bold text-sm border-b-2 border-brand-accent pb-1 group-hover:text-brand-accent transition-colors max-md:mb-4">
                   View Collection <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
