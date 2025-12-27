@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnerWare - Fusion Luxury</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600;800&family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /*
+           V3: Modern Fusion Design
+           Combining Global Premium Aesthetics with Local Warmth & Typography
+        */
+        :root {
+            --brand-dark: #1E293B; /* Deep Blue-Grey (Softer than black, premium) */
+            --brand-accent: #D97706; /* Warm Amber/Gold (Warmth, Energy) */
+            --bg-light: #F8FAFC;
+            --white: #FFFFFF;
+            --text-main: #334155;
+            --text-muted: #64748B;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+            --font-bangla: 'Hind Siliguri', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        /* Utility */
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .flex { display: flex; }
+        .justify-between { justify-content: space-between; }
+        .items-center { align-items: center; }
+        .text-center { text-align: center; }
+        .uppercase { text-transform: uppercase; }
+
+        .bangla-text {
+            font-family: var(--font-bangla);
+            line-height: 1.4;
+        }
+
+        /* Top Bar - Trust & Contact */
+        .top-bar {
+            background-color: var(--brand-dark);
+            color: rgba(255,255,255,0.9);
+            padding: 0.6rem 0;
+            font-size: 0.85rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .top-link {
+            color: var(--brand-accent);
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        /* Navigation - Sticky & Clean */
+        nav {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px -10px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--brand-dark);
+            letter-spacing: -0.5px;
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+        .logo span {
+            font-size: 0.7rem;
+            font-family: var(--font-body);
+            letter-spacing: 2px;
+            color: var(--brand-accent);
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+        }
+        .nav-item {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--brand-dark);
+            position: relative;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .nav-item:hover { color: var(--brand-accent); }
+        .nav-item.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--brand-accent);
+        }
+
+        /* Hero Section - The "Fusion" Element */
+        .hero {
+            position: relative;
+            height: 85vh;
+            background-color: var(--brand-dark);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Split Hero Layout */
+        .hero-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: 100%;
+            width: 100%;
+        }
+
+        .hero-text {
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .hero-tag {
+            color: var(--brand-accent);
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            line-height: 1.1;
+            margin: 0 0 1.5rem 0;
+        }
+
+        .hero-bangla {
+            font-family: var(--font-bangla);
+            font-size: 1.5rem;
+            color: #cbd5e1;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            border-left: 3px solid var(--brand-accent);
+            padding-left: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--brand-accent);
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            display: inline-block;
+            width: fit-content;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(217, 119, 6, 0.3);
+        }
+
+        .hero-image {
+            background-color: #334155;
+            position: relative;
+            /* In a real site, this would be a lifestyle image */
+            background-image: linear-gradient(45deg, #1e293b 25%, transparent 25%, transparent 75%, #1e293b 75%, #1e293b), linear-gradient(45deg, #1e293b 25%, transparent 25%, transparent 75%, #1e293b 75%, #1e293b);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            opacity: 0.3;
+        }
+
+        /* Trust Badge Strip */
+        .trust-strip {
+            background: white;
+            padding: 2.5rem 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            margin-top: -3rem; /* Overlap hero */
+            position: relative;
+            z-index: 10;
+            border-radius: 4px;
+        }
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0 1rem;
+            border-right: 1px solid #e2e8f0;
+        }
+        .trust-item:last-child { border-right: none; }
+        .trust-icon {
+            font-size: 2rem;
+            color: var(--brand-dark);
+        }
+        .trust-text h4 { margin: 0; font-size: 0.95rem; font-weight: 700; color: var(--brand-dark); }
+        .trust-text p { margin: 0; font-size: 0.8rem; color: var(--text-muted); }
+
+        /* Categories with Motion Feel */
+        .categories-section {
+            padding: 5rem 0;
+        }
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 3rem;
+        }
+        .section-title h2 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--brand-dark);
+            margin: 0;
+        }
+        .section-title span {
+            color: var(--brand-accent);
+            font-family: var(--font-bangla);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        .view-all {
+            color: var(--brand-dark);
+            font-weight: 700;
+            text-decoration: none;
+            border-bottom: 2px solid var(--brand-accent);
+            padding-bottom: 2px;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .cat-card {
+            position: relative;
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #CBD5E1;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .cat-card:hover { transform: translateY(-5px); }
+        .cat-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            box-sizing: border-box;
+        }
+        .cat-info h3 { margin: 0; font-size: 1.5rem; font-family: var(--font-display); }
+        .cat-info p { margin: 0.5rem 0 0; font-family: var(--font-bangla); opacity: 0.9; }
+
+        /* Product Carousel Preview */
+        .product-preview {
+            background-color: white;
+            padding: 5rem 0;
+        }
+        .prod-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        .prod-card {
+            transition: opacity 0.3s;
+        }
+        .prod-card:hover { opacity: 0.8; }
+        .prod-img {
+            background-color: #F1F5F9;
+            height: 300px;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        .badge-new {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: var(--brand-dark);
+            color: white;
+            padding: 4px 8px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .prod-title { font-weight: 600; font-size: 1rem; margin-bottom: 0.2rem; }
+        .prod-price { color: var(--brand-accent); font-weight: 700; }
+        .prod-meta { font-size: 0.8rem; color: var(--text-muted); font-family: var(--font-bangla); }
+
+        /* Footer */
+        footer {
+            background-color: var(--brand-dark);
+            color: #94A3B8;
+            padding: 4rem 0 2rem;
+            font-size: 0.9rem;
+        }
+        .footer-logo {
+            color: white;
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="flex items-center">
+                <span>🇧🇩 Bangladesh's Premium Innerwear Brand</span>
+            </div>
+            <div class="flex items-center">
+                <span>Need Help?</span>
+                <a href="#" class="top-link">017-0000-0000</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nav -->
+    <nav>
+        <div class="container flex justify-between items-center">
+            <div class="logo">
+                INNERWARE
+                <span>Premium Essentials</span>
+            </div>
+
+            <div class="nav-menu">
+                <div class="nav-item active">New Arrivals</div>
+                <div class="nav-item">Men (পুরুষ)</div>
+                <div class="nav-item">Women (মহিলা)</div>
+                <div class="nav-item">Kids</div>
+                <div class="nav-item" style="color: var(--brand-accent);">Sale</div>
+            </div>
+
+            <div class="flex items-center" style="gap: 1.5rem; font-size: 1.2rem;">
+                <span>🔍</span>
+                <span>🛒</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-split">
+            <div class="hero-text">
+                <div class="hero-tag">Winter Collection 2025</div>
+                <h1>Redefining <br>Comfort & Class</h1>
+                <div class="hero-bangla">
+                    বিলাসবহুল আরাম, যা আপনার প্রতিদিনের সঙ্গী। <br>
+                    <span style="font-size: 1rem; opacity: 0.7;">(Luxury comfort, your everyday companion)</span>
+                </div>
+                <button class="btn-primary">Shop Now</button>
+            </div>
+            <div class="hero-image">
+                <!-- Placeholder for Lifestyle Image -->
+                <div style="position: absolute; bottom: 2rem; right: 2rem; background: white; padding: 1rem; color: black; font-weight: bold;">
+                    📷 Lifestyle Shot <br> <span style="font-weight: normal; font-size: 0.8rem;">Models wearing premium collection</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Factors (Floating) -->
+    <div class="container">
+        <div class="trust-strip">
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <div class="trust-icon">💎</div>
+                    <div class="trust-text">
+                        <h4>Premium Cotton</h4>
+                        <p>100% Breathable Fabric</p>
+                    </div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">🛡️</div>
+                    <div class="trust-text">
+                        <h4>Authentic</h4>
+                        <p>Official Brand Warranty</p>
+                    </div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">🚚</div>
+                    <div class="trust-text">
+                        <h4>Express Delivery</h4>
+                        <p>All Over Bangladesh</p>
+                    </div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">💵</div>
+                    <div class="trust-text">
+                        <h4>Cash on Delivery</h4>
+                        <p>Pay After Receiving</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Categories -->
+    <section class="container categories-section">
+        <div class="section-header">
+            <div class="section-title">
+                <span>আমাদের কালেকশন (Our Collection)</span>
+                <h2>Shop By Category</h2>
+            </div>
+            <a href="#" class="view-all">View All Products →</a>
+        </div>
+
+        <div class="category-grid">
+            <div class="cat-card">
+                <div class="cat-info">
+                    <h3>Men's Essentials</h3>
+                    <p>প্রিমিয়াম ভেস্ট এবং আন্ডারওয়্যার</p>
+                </div>
+            </div>
+            <div class="cat-card" style="background-color: #94A3B8;">
+                <div class="cat-info">
+                    <h3>Women's Comfort</h3>
+                    <p>স্টাইলিশ এবং আরামদায়ক</p>
+                </div>
+            </div>
+            <div class="cat-card" style="background-color: #64748B;">
+                <div class="cat-info">
+                    <h3>Winter Wear</h3>
+                    <p>শীতের উষ্ণতা</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Preview -->
+    <section class="product-preview">
+        <div class="container">
+            <div class="section-title text-center" style="margin-bottom: 3rem;">
+                <h2>Trending Now</h2>
+            </div>
+
+            <div class="prod-grid">
+                <!-- P1 -->
+                <div class="prod-card">
+                    <div class="prod-img">
+                        <span class="badge-new">New</span>
+                    </div>
+                    <div class="prod-title">Premium Boxer Brief</div>
+                    <div class="prod-meta">Men's Collection</div>
+                    <div class="prod-price">৳ 450.00</div>
+                </div>
+                <!-- P2 -->
+                <div class="prod-card">
+                    <div class="prod-img"></div>
+                    <div class="prod-title">Seamless Comfort Bra</div>
+                    <div class="prod-meta">Women's Collection</div>
+                    <div class="prod-price">৳ 650.00</div>
+                </div>
+                <!-- P3 -->
+                <div class="prod-card">
+                    <div class="prod-img">
+                        <span class="badge-new" style="background: var(--brand-accent);">Hot</span>
+                    </div>
+                    <div class="prod-title">Cotton Vest (Pack of 3)</div>
+                    <div class="prod-meta">Daily Essentials</div>
+                    <div class="prod-price">৳ 950.00</div>
+                </div>
+                <!-- P4 -->
+                <div class="prod-card">
+                    <div class="prod-img"></div>
+                    <div class="prod-title">Thermal Set</div>
+                    <div class="prod-meta">Winter Special</div>
+                    <div class="prod-price">৳ 1,250.00</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem;">
+            <div>
+                <div class="footer-logo">INNERWARE</div>
+                <p>Designed in Bangladesh, for Bangladesh. We bring you the perfect blend of international quality and local comfort.</p>
+                <div style="margin-top: 1.5rem; color: white;">
+                    📍 Dhaka, Bangladesh
+                </div>
+            </div>
+            <div>
+                <h4 style="color: white; margin-bottom: 1.5rem;">Shop</h4>
+                <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                    <a href="#">New Arrivals</a>
+                    <a href="#">Men</a>
+                    <a href="#">Women</a>
+                    <a href="#">Sales</a>
+                </div>
+            </div>
+            <div>
+                <h4 style="color: white; margin-bottom: 1.5rem;">Help</h4>
+                <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                    <a href="#">Order Tracking</a>
+                    <a href="#">Returns & Exchange</a>
+                    <a href="#">Size Guide</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+            <div>
+                <h4 style="color: white; margin-bottom: 1.5rem;">We Accept</h4>
+                <div style="font-size: 1.5rem;">
+                    💳 📱 🏦
+                </div>
+                <p style="font-size: 0.8rem; margin-top: 0.5rem;">Visa, Mastercard, bKash, Nagad</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
