@@ -23,7 +23,7 @@ export default function Hero() {
           </div>
 
           <div>
-            <button className="bg-brand-accent text-white px-6 py-3 md:px-8 md:py-4 font-bold text-xs md:text-sm tracking-widest uppercase hover:translate-y-[-2px] hover:shadow-[0_10px_20px_rgba(217,119,6,0.3)] transition-all duration-300">
+            <button className="cursor-pointer bg-brand-accent text-white px-6 py-3 md:px-8 md:py-4 font-bold text-xs md:text-sm tracking-widest uppercase hover:translate-y-[-2px] hover:shadow-[0_10px_20px_rgba(217,119,6,0.3)] transition-all duration-300">
               Shop Now
             </button>
           </div>

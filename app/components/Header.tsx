@@ -89,17 +89,17 @@ export default function Header() {
 
           {/* Icons & Mobile Toggle */}
           <div className="flex items-center gap-4 sm:gap-6">
-            <button className="text-brand-dark hover:text-brand-accent transition-colors" aria-label="Search">
+            <button className="cursor-pointer text-brand-dark hover:text-brand-accent transition-colors" aria-label="Search">
               <FiSearch className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
-            <button className="text-brand-dark hover:text-brand-accent transition-colors relative" aria-label="Cart">
+            <button className="cursor-pointer text-brand-dark hover:text-brand-accent transition-colors relative" aria-label="Cart">
               <FiShoppingBag className="w-5 h-5 sm:w-6 sm:h-6" />
               <span className="absolute -top-1 -right-1 bg-brand-accent text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
             </button>
 
             {/* Hamburger Menu (Mobile) */}
             <button
-              className="md:hidden text-brand-dark"
+              className="cursor-pointer md:hidden text-brand-dark"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle Menu"
             >
