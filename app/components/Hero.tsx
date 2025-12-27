@@ -35,7 +35,7 @@ export default function Hero() {
           */}
           <div className="absolute inset-0 bg-[linear-gradient(45deg,#1e293b_25%,transparent_25%,transparent_75%,#1e293b_75%,#1e293b),linear-gradient(45deg,#1e293b_25%,transparent_25%,transparent_75%,#1e293b_75%,#1e293b)] bg-[length:20px_20px] bg-[position:0_0,10px_10px] opacity-20"></div>
 
-          <div className="absolute bottom-8 right-8 bg-white p-4 text-black shadow-lg">
+          <div className="absolute bottom-8 right-8 md:bottom-32 bg-white p-4 text-black shadow-lg">
             <p className="font-bold text-sm">📷 Lifestyle Shot</p>
             <p className="text-xs text-gray-500">Models wearing premium collection</p>
           </div>
