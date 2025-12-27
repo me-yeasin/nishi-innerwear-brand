@@ -1,7 +1,12 @@
-import { FiStar, FiCheck, FiUser } from "react-icons/fi";
+"use client";
+
+import { useState, useRef } from "react";
+import { FiStar, FiCheck, FiUser, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { FaQuoteRight } from "react-icons/fa";
 
 export default function CustomerReviews() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
   const reviews = [
     {
       id: 1,
@@ -35,36 +40,123 @@ export default function CustomerReviews() {
       bangla: "কালার গ্যারান্টি সত্যি। ৫ বার ধোয়ার পরেও কালো রং নতুনের মতোই আছে। দাম অনুযায়ী সেরা।",
       verified: true,
       initial: "T"
+    },
+    {
+      id: 4,
+      name: "Nusrat Jahan",
+      role: "Regular Customer",
+      rating: 5,
+      date: "1 month ago",
+      text: "Delivery was super fast, got it the next day in Uttara. The material is very soft and doesn't shrink after washing.",
+      bangla: "ডেলিভারি খুব দ্রুত ছিল, পরদিনই পেয়েছি। কাপড়টা খুবই সফট আর ধোয়ার পরে ছোট হয়ে যায় না।",
+      verified: true,
+      initial: "N"
+    },
+    {
+      id: 5,
+      name: "Karim Ullah",
+      role: "Business Owner",
+      rating: 5,
+      date: "2 months ago",
+      text: "The fit is perfect. Usually, XXL sizes in local brands are tight, but this one is true to size. Will buy again.",
+      bangla: "ফিটিং একদম পারফেক্ট। সাধারণত লোকাল ব্র্যান্ডের XXL সাইজ টাইট হয়, কিন্তু এটা ঠিকঠাক। আবার কিনব।",
+      verified: true,
+      initial: "K"
+    },
+    {
+      id: 6,
+      name: "Mehedi Hasan",
+      role: "Student",
+      rating: 4,
+      date: "3 months ago",
+      text: "Value for money. The combo pack is a steal. Wish there were more color options though.",
+      bangla: "টাকা উসুল প্রোডাক্ট। কম্বো প্যাকটা দারুণ। তবে আরও কালার অপশন থাকলে ভালো হতো।",
+      verified: true,
+      initial: "M"
+    },
+    {
+      id: 7,
+      name: "Fariha Akter",
+      role: "Housewife",
+      rating: 5,
+      date: "4 months ago",
+      text: "Bought for my son. He loves the fabric. It's very soft and comfortable for daily wear.",
+      bangla: "ছেলের জন্য কিনেছি। সে কাপড়টা খুব পছন্দ করেছে। প্রতিদিন পরার জন্য খুব আরামদায়ক।",
+      verified: true,
+      initial: "F"
+    },
+    {
+      id: 8,
+      name: "Jamil Ahmed",
+      role: "Freelancer",
+      rating: 5,
+      date: "5 months ago",
+      text: "Premium packaging, premium product. Feels like an international brand. Highly recommended.",
+      bangla: "প্যাকেজিং আর প্রোডাক্ট দুইটাই প্রিমিয়াম। একদম বিদেশি ব্র্যান্ডের মতো মনে হয়। সবাইকে রেকমেন্ড করব।",
+      verified: true,
+      initial: "J"
     }
   ];
 
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const { current } = scrollRef;
+      const scrollAmount = direction === 'left' ? -400 : 400;
+      current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="py-20 md:py-32 bg-bg-light relative">
+    <section className="py-20 md:py-32 bg-bg-light relative overflow-hidden">
       <div className="max-w-[1300px] mx-auto px-4 md:px-8">
 
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-3xl md:text-5xl text-brand-dark mb-4">
-            Loved by Bangladesh
-          </h2>
-          <div className="flex items-center justify-center gap-2 mb-2">
-            <div className="flex text-brand-accent">
-              {[...Array(5)].map((_, i) => (
-                <FiStar key={i} className="w-5 h-5 fill-current" />
-              ))}
+        {/* Header with Navigation */}
+        <div className="flex flex-col md:flex-row items-center justify-between mb-12">
+          <div className="text-center md:text-left mb-8 md:mb-0">
+            <h2 className="font-serif text-3xl md:text-5xl text-brand-dark mb-4">
+              Loved by Bangladesh
+            </h2>
+            <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
+              <div className="flex text-brand-accent">
+                {[...Array(5)].map((_, i) => (
+                  <FiStar key={i} className="w-5 h-5 fill-current" />
+                ))}
+              </div>
+              <span className="font-bold text-brand-dark">4.9/5</span>
+              <span className="text-text-muted text-sm">(2,500+ Reviews)</span>
             </div>
-            <span className="font-bold text-brand-dark">4.9/5</span>
-            <span className="text-text-muted text-sm">(2,500+ Reviews)</span>
+            <p className="bangla text-gray-500 text-lg">আমাদের গ্রাহকদের বাস্তব অভিজ্ঞতা</p>
           </div>
-          <p className="bangla text-gray-500 text-lg">আমাদের গ্রাহকদের বাস্তব অভিজ্ঞতা</p>
+
+          {/* Slider Controls */}
+          <div className="flex gap-4">
+            <button
+              onClick={() => scroll('left')}
+              className="w-12 h-12 rounded-full border border-brand-dark/10 flex items-center justify-center text-brand-dark hover:bg-brand-dark hover:text-white transition-all duration-300 cursor-pointer"
+              aria-label="Previous reviews"
+            >
+              <FiChevronLeft className="w-6 h-6" />
+            </button>
+            <button
+              onClick={() => scroll('right')}
+              className="w-12 h-12 rounded-full border border-brand-dark/10 flex items-center justify-center text-brand-dark hover:bg-brand-dark hover:text-white transition-all duration-300 cursor-pointer"
+              aria-label="Next reviews"
+            >
+              <FiChevronRight className="w-6 h-6" />
+            </button>
+          </div>
         </div>
 
-        {/* Reviews Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Reviews Slider */}
+        <div
+          ref={scrollRef}
+          className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
           {reviews.map((review) => (
             <div
               key={review.id}
-              className="bg-white p-8 rounded-sm shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer group relative"
+              className="min-w-[85vw] md:min-w-[400px] snap-center bg-white p-8 rounded-sm shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 cursor-pointer group relative flex flex-col"
             >
               {/* Quote Icon Background */}
               <div className="absolute top-6 right-6 text-gray-100 group-hover:text-brand-accent/10 transition-colors">
@@ -73,7 +165,7 @@ export default function CustomerReviews() {
 
               {/* User Info */}
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 rounded-full bg-brand-dark/5 flex items-center justify-center text-brand-dark font-serif font-bold text-xl group-hover:bg-brand-dark group-hover:text-white transition-colors">
+                <div className="w-12 h-12 rounded-full bg-brand-dark/5 flex items-center justify-center text-brand-dark font-serif font-bold text-xl group-hover:bg-brand-dark group-hover:text-white transition-colors flex-shrink-0">
                   {review.initial}
                 </div>
                 <div>
@@ -95,7 +187,7 @@ export default function CustomerReviews() {
               </div>
 
               {/* Content */}
-              <div className="space-y-4 relative z-10">
+              <div className="space-y-4 relative z-10 flex-1">
                 <p className="text-brand-dark text-sm leading-relaxed italic">
                   &ldquo;{review.text}&rdquo;
                 </p>
@@ -110,12 +202,12 @@ export default function CustomerReviews() {
         </div>
 
         {/* Trust Footer */}
-        <div className="mt-16 text-center border-t border-gray-200 pt-8">
+        <div className="mt-8 text-center border-t border-gray-200 pt-8">
           <p className="text-xs font-bold text-text-muted uppercase tracking-widest mb-4">
             Trusted by 10,000+ Customers across Bangladesh
           </p>
           <div className="flex justify-center gap-8 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-             {/* Mock Logos for Trust (Payment/Delivery Partners) - using text for now */}
+             {/* Mock Logos for Trust */}
              <span className="font-bold text-xl text-slate-400">Pathao</span>
              <span className="font-bold text-xl text-slate-400">Steadfast</span>
              <span className="font-bold text-xl text-slate-400">RedX</span>
