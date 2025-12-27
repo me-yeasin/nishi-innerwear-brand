@@ -1,17 +1,15 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import CategoryShowcase from "./components/CategoryShowcase";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <Header />
       <Hero />
+      <CategoryShowcase />
 
-      {/*
-        This is a placeholder for the rest of the content (Categories, Products, etc.)
-        which will be implemented in future steps.
-        For now, we just add some padding to ensure the footer/scroll works.
-      */}
+      {/* Footer Placeholder */}
       <div className="h-20 bg-bg-light"></div>
     </main>
   );
