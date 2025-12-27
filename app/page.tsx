@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import CategoryShowcase from "./components/CategoryShowcase";
 import QualityFeature from "./components/QualityFeature";
 import SmartBundles from "./components/SmartBundles";
+import CustomerReviews from "./components/CustomerReviews";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <CategoryShowcase />
       <QualityFeature />
       <SmartBundles />
+      <CustomerReviews />
 
       {/* Footer Placeholder */}
       <div className="h-20 bg-bg-light"></div>
