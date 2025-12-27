@@ -1,10 +1,31 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Hide if scrolling down AND past the top (e.g., 100px)
+      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+        setIsVisible(false);
+      } else {
+        // Show if scrolling up
+        setIsVisible(true);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <>
@@ -24,7 +45,11 @@ export default function Header() {
       </div>
 
       {/* Main Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/98 backdrop-blur-md shadow-sm border-b border-gray-100">
+      <nav
+        className={`sticky top-0 z-50 bg-white/98 backdrop-blur-md shadow-sm border-b border-gray-100 transition-transform duration-300 ${
+          isVisible ? "translate-y-0" : "-translate-y-full"
+        }`}
+      >
         <div className="max-w-[1300px] mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
 
           {/* Logo */}
