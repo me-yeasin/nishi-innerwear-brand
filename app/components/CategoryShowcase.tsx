@@ -60,7 +60,7 @@ export default function CategoryShowcase() {
             <Link
               key={cat.id}
               href={cat.href}
-              className={`group relative overflow-hidden rounded-sm shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer ${cat.className}`}
+              className={`group relative overflow-hidden rounded-sm shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer h-[400px] md:h-auto ${cat.className}`}
             >
               {/* Background Pattern (Placeholder for Image) */}
               <div className={`absolute inset-0 transition-transform duration-700 group-hover:scale-110 opacity-80
