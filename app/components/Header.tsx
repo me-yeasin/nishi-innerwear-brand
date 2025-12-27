@@ -68,17 +68,21 @@ export default function Header() {
               New Arrivals
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-accent transition-all group-hover:w-full"></span>
             </Link>
-            <Link href="#" className="text-sm font-semibold text-brand-dark hover:text-brand-accent transition-colors">
+            <Link href="#" className="text-sm font-semibold text-brand-dark hover:text-brand-accent transition-colors relative group">
               Men <span className="bangla text-xs font-normal opacity-80">(পুরুষ)</span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-accent transition-all group-hover:w-full"></span>
             </Link>
-            <Link href="#" className="text-sm font-semibold text-brand-dark hover:text-brand-accent transition-colors">
+            <Link href="#" className="text-sm font-semibold text-brand-dark hover:text-brand-accent transition-colors relative group">
               Women <span className="bangla text-xs font-normal opacity-80">(মহিলা)</span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-accent transition-all group-hover:w-full"></span>
             </Link>
-            <Link href="#" className="text-sm font-semibold text-brand-dark hover:text-brand-accent transition-colors">
+            <Link href="#" className="text-sm font-semibold text-brand-dark hover:text-brand-accent transition-colors relative group">
               Kids
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-accent transition-all group-hover:w-full"></span>
             </Link>
-            <Link href="#" className="text-sm font-bold text-brand-accent hover:text-brand-dark transition-colors">
+            <Link href="#" className="text-sm font-bold text-brand-accent hover:text-brand-dark transition-colors relative group">
               Sale
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-accent transition-all group-hover:w-full"></span>
             </Link>
           </div>
 
