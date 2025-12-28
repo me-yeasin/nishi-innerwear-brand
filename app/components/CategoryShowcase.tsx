@@ -9,7 +9,7 @@ const categories = [
     title: "Men's Premium",
     subtitle: "Gentlemen's Choice",
     bangla: "পুরুষদের কালেকশন",
-    href: "/men",
+    href: "/shop/men",
     // In a real app, use actual image paths. Using CSS gradients/patterns for now as per design system.
     className: "md:col-span-2 md:row-span-2 bg-slate-800",
     theme: "dark"
@@ -19,7 +19,7 @@ const categories = [
     title: "Women's Comfort",
     subtitle: "Elegance & Ease",
     bangla: "মহিলাদের কালেকশন",
-    href: "/women",
+    href: "/shop/women",
     className: "md:col-span-1 md:row-span-1 bg-amber-700",
     theme: "light"
   },
@@ -28,7 +28,7 @@ const categories = [
     title: "Kids Series",
     subtitle: "Soft & Safe",
     bangla: "শিশুদের পোশাক",
-    href: "/kids",
+    href: "/shop/kids",
     className: "md:col-span-1 md:row-span-1 bg-slate-600",
     theme: "dark"
   }

@@ -71,10 +71,10 @@ export default function CartDrawer() {
               Shipping & taxes calculated at checkout.
             </p>
 
-            <button className="w-full bg-brand-dark text-white py-4 font-bold uppercase tracking-[0.15em] flex items-center justify-center gap-2 hover:bg-brand-accent transition-colors duration-300 cursor-pointer shadow-lg group relative overflow-hidden">
+            <a href="/checkout" className="w-full bg-brand-dark text-white py-4 font-bold uppercase tracking-[0.15em] flex items-center justify-center gap-2 hover:bg-brand-accent transition-colors duration-300 cursor-pointer shadow-lg group relative overflow-hidden" onClick={closeCart}>
               <span className="relative z-10">Checkout Now</span>
               <span className="absolute inset-0 bg-brand-accent translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
-            </button>
+            </a>
 
             {/* Trust Badges */}
             <div className="flex justify-center gap-6 mt-4 pt-4 border-t border-gray-200/50 text-[10px] text-gray-400 font-bold uppercase tracking-wider">
