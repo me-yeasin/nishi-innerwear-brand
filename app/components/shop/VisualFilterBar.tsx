@@ -11,7 +11,7 @@ export default function VisualFilterBar() {
   ];
 
   return (
-    <div className="sticky top-[64px] z-30 bg-white border-b border-gray-100 shadow-sm">
+    <div className="sticky top-0 z-30 bg-white border-b border-gray-100 shadow-sm">
       <div className="max-w-[1300px] mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
 
         {/* Horizontal Scroll Filters */}
