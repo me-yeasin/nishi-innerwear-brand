@@ -1,0 +1,33 @@
+
+> nishi@0.1.0 dev
+> next dev --webpack
+
+▲ Next.js 16.1.1 (webpack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.2:3000
+
+✓ Starting...
+✓ Ready in 3.6s
+○ Compiling /search ...
+ GET /search?q=men 200 in 18.5s (compile: 17.7s, render: 773ms)
+⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /cart 200 in 957ms (compile: 736ms, render: 221ms)
+⨯ Error: useWishlist must be used within a WishlistProvider
+    at useWishlist (app/context/WishlistContext.tsx:66:11)
+    at WishlistPage (app/wishlist/page.tsx:11:52)
+  64 |   const context = useContext(WishlistContext);
+  65 |   if (context === undefined) {
+> 66 |     throw new Error('useWishlist must be used within a WishlistProvider');
+     |           ^
+  67 |   }
+  68 |   return context;
+  69 | } {
+  digest: '2047942889'
+}
+⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /wishlist 200 in 613ms (compile: 421ms, render: 193ms)
+ GET /search?q=men 200 in 971ms (compile: 710ms, render: 261ms)
+ GET /cart 200 in 587ms (compile: 344ms, render: 243ms)
+ GET /wishlist 200 in 97ms (compile: 18ms, render: 79ms)
+⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /login 200 in 1634ms (compile: 1409ms, render: 225ms)

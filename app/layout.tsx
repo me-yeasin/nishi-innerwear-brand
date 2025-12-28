@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter, Hind_Siliguri } from "next/font/google";
 import { CartProvider } from "./context/CartContext";
+import { WishlistProvider } from "./context/WishlistContext";
 import CartDrawer from "./components/cart/CartDrawer";
 import "./globals.css";
 
@@ -36,8 +37,10 @@ export default function RootLayout({
         className={`${playfair.variable} ${inter.variable} ${hindSiliguri.variable} antialiased font-sans`}
       >
         <CartProvider>
-          {children}
-          <CartDrawer />
+          <WishlistProvider>
+            {children}
+            <CartDrawer />
+          </WishlistProvider>
         </CartProvider>
       </body>
     </html>
