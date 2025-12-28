@@ -38,19 +38,19 @@ export default function Footer() {
             <h4 className="font-serif text-lg font-bold mb-6 text-white">Quick Links</h4>
             <ul className="space-y-4 text-sm text-gray-400">
               <li>
-                <Link href="#" className="hover:text-brand-accent transition-colors">Track Your Order</Link>
+                <Link href="/track-order" className="hover:text-brand-accent transition-colors">Track Your Order</Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-brand-accent transition-colors">Exchange Policy</Link>
+                <Link href="/policies" className="hover:text-brand-accent transition-colors">Exchange Policy</Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-brand-accent transition-colors">Size Guide</Link>
+                <Link href="/fit-guide" className="hover:text-brand-accent transition-colors">Size Guide</Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-brand-accent transition-colors">About Us</Link>
+                <Link href="/about" className="hover:text-brand-accent transition-colors">About Us</Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-brand-accent transition-colors">Contact Support</Link>
+                <Link href="/contact" className="hover:text-brand-accent transition-colors">Contact Support</Link>
               </li>
             </ul>
           </div>
@@ -115,8 +115,8 @@ export default function Footer() {
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
           <p>&copy; {new Date().getFullYear()} InnerWare BD. All rights reserved.</p>
           <div className="flex gap-6">
-            <span className="hover:text-brand-accent cursor-pointer transition-colors">Privacy Policy</span>
-            <span className="hover:text-brand-accent cursor-pointer transition-colors">Terms of Service</span>
+            <Link href="/policies" className="hover:text-brand-accent cursor-pointer transition-colors">Privacy Policy</Link>
+            <Link href="/policies" className="hover:text-brand-accent cursor-pointer transition-colors">Terms of Service</Link>
           </div>
           <p className="font-mono text-[10px] opacity-70">
             Trade License: TRAD/DSCC/028491/2024
