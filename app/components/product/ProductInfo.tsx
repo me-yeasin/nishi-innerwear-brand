@@ -3,10 +3,22 @@
 import { useState } from "react";
 import { FiShoppingBag, FiTruck, FiRefreshCw, FiShield } from "react-icons/fi";
 import { FaRuler } from "react-icons/fa";
+import { useCart } from "../../context/CartContext";
 
 export default function ProductInfo() {
+  const { addToCart } = useCart();
   const [selectedSize, setSelectedSize] = useState("M");
   const [selectedColor, setSelectedColor] = useState("navy");
+
+  const handleAddToCart = () => {
+    addToCart({
+      id: "prod-1",
+      name: "Midnight Blue Comfort Brief",
+      price: 450,
+      size: selectedSize,
+      color: selectedColor,
+    });
+  };
 
   return (
     <div className="w-full md:w-[40%] md:h-screen md:sticky md:top-0 p-6 md:p-12 lg:p-16 flex flex-col justify-center bg-white border-l border-gray-50">
@@ -88,7 +100,10 @@ export default function ProductInfo() {
 
       {/* Actions */}
       <div className="space-y-4 mb-8">
-        <button className="w-full bg-brand-dark text-white py-4 font-bold uppercase tracking-[0.15em] flex items-center justify-center gap-2 hover:bg-brand-accent transition-colors duration-300 cursor-pointer shadow-lg hover:shadow-brand-accent/20">
+        <button
+          onClick={handleAddToCart}
+          className="w-full bg-brand-dark text-white py-4 font-bold uppercase tracking-[0.15em] flex items-center justify-center gap-2 hover:bg-brand-accent transition-colors duration-300 cursor-pointer shadow-lg hover:shadow-brand-accent/20"
+        >
           <FiShoppingBag className="w-5 h-5" /> Add to Bag
         </button>
         <p className="text-center text-xs text-text-muted">

@@ -3,8 +3,10 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { FiSearch, FiShoppingBag, FiMenu, FiX } from "react-icons/fi";
+import { useCart } from "../context/CartContext";
 
 export default function Header() {
+  const { openCart, items } = useCart();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const lastScrollY = useRef(0);
@@ -92,9 +94,15 @@ export default function Header() {
             <button className="cursor-pointer text-brand-dark hover:text-brand-accent transition-colors" aria-label="Search">
               <FiSearch className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
-            <button className="cursor-pointer text-brand-dark hover:text-brand-accent transition-colors relative" aria-label="Cart">
+            <button
+              className="cursor-pointer text-brand-dark hover:text-brand-accent transition-colors relative"
+              aria-label="Cart"
+              onClick={openCart}
+            >
               <FiShoppingBag className="w-5 h-5 sm:w-6 sm:h-6" />
-              <span className="absolute -top-1 -right-1 bg-brand-accent text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+              <span className="absolute -top-1 -right-1 bg-brand-accent text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                {items.length}
+              </span>
             </button>
 
             {/* Hamburger Menu (Mobile) */}
