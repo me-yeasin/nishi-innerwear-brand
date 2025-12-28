@@ -1,12 +1,31 @@
 "use client";
 
 import { useState } from "react";
-import { FiSmartphone, FiMapPin, FiTruck, FiDollarSign } from "react-icons/fi";
+import { useRouter } from "next/navigation";
+import { FiSmartphone, FiMapPin, FiTruck, FiLoader } from "react-icons/fi";
 import { RiSecurePaymentLine } from "react-icons/ri";
+import { useCart } from "../../context/CartContext";
 
 export default function CheckoutForm() {
+  const router = useRouter();
+  const { clearCart } = useCart();
   const [city, setCity] = useState("dhaka");
   const [paymentMethod, setPaymentMethod] = useState("cod");
+  const [isProcessing, setIsProcessing] = useState(false);
+
+  const handleConfirmOrder = async () => {
+    setIsProcessing(true);
+
+    // Simulate API call
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+
+    // Clear Cart and Redirect
+    clearCart();
+
+    // Generate a random Order ID for demo
+    const randomId = `ORD-${Math.floor(1000 + Math.random() * 9000)}`;
+    router.push(`/checkout/success?id=${randomId}`);
+  };
 
   return (
     <div className="bg-white p-6 md:p-8 rounded-lg shadow-sm border border-gray-100">
@@ -167,9 +186,21 @@ export default function CheckoutForm() {
 
       {/* Confirm Button */}
       <div className="mt-8 pl-0 md:pl-11">
-        <button className="w-full bg-brand-accent text-white font-bold py-4 rounded shadow-lg hover:bg-amber-700 transition-colors flex flex-col items-center justify-center gap-1 cursor-pointer">
-          <span className="text-lg uppercase tracking-widest">Confirm Order</span>
-          <span className="text-xs opacity-90 font-normal">I agree to the Terms & Conditions</span>
+        <button
+          onClick={handleConfirmOrder}
+          disabled={isProcessing}
+          className={`w-full bg-brand-accent text-white font-bold py-4 rounded shadow-lg hover:bg-amber-700 transition-colors flex flex-col items-center justify-center gap-1 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed`}
+        >
+          {isProcessing ? (
+            <span className="flex items-center gap-2">
+              <FiLoader className="animate-spin w-5 h-5" /> Processing...
+            </span>
+          ) : (
+            <>
+              <span className="text-lg uppercase tracking-widest">Confirm Order</span>
+              <span className="text-xs opacity-90 font-normal">I agree to the Terms & Conditions</span>
+            </>
+          )}
         </button>
         <div className="text-center mt-4">
            <p className="text-xs text-text-muted">
