@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { FiShoppingBag, FiTruck, FiRefreshCw, FiShield } from "react-icons/fi";
 import { FaRuler } from "react-icons/fa";
 import { useCart } from "../../context/CartContext";
@@ -76,9 +77,9 @@ export default function ProductInfo() {
             <span className="text-xs font-bold text-text-muted uppercase tracking-wider">
               Select Size
             </span>
-            <button className="flex items-center gap-1 text-xs text-brand-accent font-bold hover:underline cursor-pointer">
+            <Link href="/fit-guide" className="flex items-center gap-1 text-xs text-brand-accent font-bold hover:underline cursor-pointer">
               <FaRuler /> আমার সাইজ কত? (Size Guide)
-            </button>
+            </Link>
           </div>
           <div className="grid grid-cols-4 gap-2">
             {['M', 'L', 'XL', 'XXL'].map((size) => (
