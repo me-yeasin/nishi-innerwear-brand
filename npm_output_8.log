@@ -49,3 +49,21 @@ https://nextjs.org/docs/messages/module-not-found
  GET /account/orders 200 in 1403ms (compile: 1050ms, render: 353ms)
 ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
  GET /materials 200 in 812ms (compile: 627ms, render: 186ms)
+○ Compiling / ...
+ GET / 200 in 12.5s (compile: 10.2s, render: 2.3s)
+ GET /shop/men 200 in 2.4s (compile: 2.2s, render: 190ms)
+ GET /products/1 200 in 2.1s (compile: 1683ms, render: 380ms)
+⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /cart 200 in 1440ms (compile: 1253ms, render: 187ms)
+ GET / 200 in 571ms (compile: 26ms, render: 544ms)
+ GET /shop/men 200 in 188ms (compile: 57ms, render: 131ms)
+ GET /products/1 200 in 228ms (compile: 57ms, render: 171ms)
+ GET /cart 200 in 78ms (compile: 13ms, render: 65ms)
+○ Compiling /checkout ...
+⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /checkout 200 in 5.3s (compile: 4.5s, render: 812ms)
+⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /contact 200 in 1082ms (compile: 803ms, render: 279ms)
+ GET /account 200 in 1073ms (compile: 890ms, render: 183ms)
+ GET /materials 200 in 793ms (compile: 640ms, render: 153ms)
+ GET /materials 200 in 80ms (compile: 6ms, render: 74ms)
