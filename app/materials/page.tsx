@@ -12,7 +12,18 @@ export default function MaterialsPage() {
 
       {/* Hero */}
       <section className="bg-brand-dark text-white py-24 px-4 text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-slate-700/50 via-brand-dark to-brand-dark opacity-50"></div>
+        {/* Background Image: Abstract Science/Fiber */}
+        <div className="absolute inset-0 z-0">
+           <Image
+             src="https://images.unsplash.com/photo-1673718697732-e02e82fe443c?auto=format&fit=crop&w=2000&q=80"
+             alt="Abstract fabric technology background"
+             fill
+             className="object-cover opacity-30"
+             priority
+           />
+           <div className="absolute inset-0 bg-brand-dark/60"></div>
+        </div>
+
         <div className="relative z-10 max-w-[800px] mx-auto">
           <p className="text-brand-accent text-xs font-bold uppercase tracking-[0.2em] mb-4">
             The Science of Comfort
@@ -30,12 +41,16 @@ export default function MaterialsPage() {
       <section className="py-24 max-w-[1300px] mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div className="order-2 md:order-1">
-             <div className="relative w-full h-[400px] md:h-[500px] bg-slate-100 rounded overflow-hidden group">
-                {/* CSS Texture Simulation */}
-                <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:16px_16px] opacity-100 transition-transform duration-700 group-hover:scale-150 origin-center"></div>
+             <div className="relative w-full h-[400px] md:h-[500px] bg-slate-100 rounded overflow-hidden group shadow-xl">
+                <Image
+                  src="https://images.unsplash.com/photo-1615799998603-7c6270a45196?auto=format&fit=crop&w=1200&q=80"
+                  alt="Micro-Modal soft white fabric texture"
+                  fill
+                  className="object-cover transition-transform duration-1000 group-hover:scale-125 origin-center"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
 
-                <div className="absolute bottom-8 left-8 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-brand-dark text-xs font-bold flex items-center gap-2">
+                <div className="absolute bottom-8 left-8 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-brand-dark text-xs font-bold flex items-center gap-2 shadow-sm">
                    <FiMinimize2 /> Hover to Magnify Texture
                 </div>
              </div>
@@ -86,9 +101,13 @@ export default function MaterialsPage() {
                 </ul>
               </div>
               <div>
-                 <div className="relative w-full h-[400px] md:h-[500px] bg-slate-200 rounded overflow-hidden group">
-                    {/* CSS Texture Simulation: Cotton Weave */}
-                     <div className="absolute inset-0 bg-[linear-gradient(45deg,#cbd5e1_25%,transparent_25%,transparent_75%,#cbd5e1_75%,#cbd5e1),linear-gradient(45deg,#cbd5e1_25%,transparent_25%,transparent_75%,#cbd5e1_75%,#cbd5e1)] [background-size:8px_8px] opacity-20 transition-transform duration-700 group-hover:scale-150 origin-center"></div>
+                 <div className="relative w-full h-[400px] md:h-[500px] bg-slate-200 rounded overflow-hidden group shadow-xl">
+                    <Image
+                      src="https://images.unsplash.com/photo-1612538498613-35c5c8d675c4?auto=format&fit=crop&w=1200&q=80"
+                      alt="Combed cotton weave texture"
+                      fill
+                      className="object-cover transition-transform duration-1000 group-hover:scale-125 origin-center"
+                    />
                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                  </div>
               </div>
