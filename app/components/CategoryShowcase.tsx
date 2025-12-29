@@ -10,7 +10,7 @@ const categories = [
     subtitle: "Gentlemen's Choice",
     bangla: "পুরুষদের কালেকশন",
     href: "/shop/men",
-    // In a real app, use actual image paths. Using CSS gradients/patterns for now as per design system.
+    image: "https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=800&q=80",
     className: "md:col-span-2 md:row-span-2 bg-slate-800",
     theme: "dark"
   },
@@ -20,6 +20,7 @@ const categories = [
     subtitle: "Elegance & Ease",
     bangla: "মহিলাদের কালেকশন",
     href: "/shop/women",
+    image: "https://images.unsplash.com/photo-1673115380140-d1941bcf21c7?auto=format&fit=crop&w=800&q=80",
     className: "md:col-span-1 md:row-span-1 bg-amber-700",
     theme: "light"
   },
@@ -29,6 +30,7 @@ const categories = [
     subtitle: "Soft & Safe",
     bangla: "শিশুদের পোশাক",
     href: "/shop/kids",
+    image: "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=800&q=80",
     className: "md:col-span-1 md:row-span-1 bg-slate-600",
     theme: "dark"
   }
@@ -62,18 +64,21 @@ export default function CategoryShowcase() {
               href={cat.href}
               className={`group relative overflow-hidden rounded-sm shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer h-[400px] md:h-auto ${cat.className}`}
             >
-              {/* Background Pattern (Placeholder for Image) */}
-              <div className={`absolute inset-0 transition-transform duration-700 group-hover:scale-110 opacity-80
-                ${cat.theme === 'dark'
-                  ? 'bg-[linear-gradient(45deg,#1e293b_25%,#334155_25%,#334155_50%,#1e293b_50%,#1e293b_75%,#334155_75%,#334155)] bg-[length:40px_40px]'
-                  : 'bg-[linear-gradient(45deg,#d97706_25%,#b45309_25%,#b45309_50%,#d97706_50%,#d97706_75%,#b45309_75%,#b45309)] bg-[length:40px_40px]'}
-              `}></div>
+              {/* Background Image */}
+              <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110">
+                <Image
+                  src={cat.image}
+                  alt={cat.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
 
               {/* Overlay Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-70 group-hover:opacity-85 transition-opacity duration-500"></div>
 
               {/* Content */}
-              <div className="absolute bottom-0 left-0 w-full p-6 md:p-10 flex flex-col items-start justify-end h-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+              <div className="absolute bottom-0 left-0 w-full p-6 md:p-10 flex flex-col items-start justify-end h-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 z-10">
                 <span className="text-brand-accent text-xs font-bold tracking-widest uppercase mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                   {cat.subtitle}
                 </span>

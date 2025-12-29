@@ -18,7 +18,6 @@ export default function WishlistPage() {
       price: item.price,
       size: "M", // Default, user can change later in cart
       color: "navy", // Default
-      quantity: 1
     });
     // Optional: remove from wishlist after adding to cart
     // removeFromWishlist(item.id);
