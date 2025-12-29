@@ -1,31 +1,48 @@
+import Image from "next/image";
+
 export default function ProductGallery() {
   return (
     <div className="flex flex-col gap-1 w-full md:w-[60%]">
-      {/*
-        Using CSS Gradients to simulate High-Res Lifestyle Shots
-        In production, these would be <Image> components
-      */}
-
       {/* Image 1: Main Lifestyle */}
-      <div className="h-[500px] md:h-[800px] w-full bg-slate-800 relative group overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(45deg,#1e293b_25%,transparent_25%,transparent_75%,#1e293b_75%,#1e293b),linear-gradient(45deg,#1e293b_25%,transparent_25%,transparent_75%,#1e293b_75%,#1e293b)] bg-[length:40px_40px] opacity-20"></div>
-        <div className="absolute bottom-8 left-8 text-white/50 text-xs tracking-[0.3em] font-serif uppercase">
+      <div className="h-[500px] md:h-[800px] w-full relative group overflow-hidden bg-slate-100">
+        <Image
+          src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200"
+          alt="Man wearing white t-shirt lifestyle shot"
+          fill
+          className="object-cover transition-transform duration-700 group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, 60vw"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors duration-500"></div>
+        <div className="absolute bottom-8 left-8 text-black/50 text-xs tracking-[0.3em] font-serif uppercase z-10">
           Lifestyle Shot 01
         </div>
       </div>
 
       {/* Image 2: Fabric Macro */}
-      <div className="h-[500px] md:h-[800px] w-full bg-slate-700 relative group overflow-hidden">
-        <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_1px_1px,#ffffff_1px,transparent_0)] bg-[length:4px_4px]"></div>
-        <div className="absolute bottom-8 left-8 text-white/50 text-xs tracking-[0.3em] font-serif uppercase">
+      <div className="h-[500px] md:h-[800px] w-full relative group overflow-hidden bg-slate-100">
+        <Image
+          src="https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=1200"
+          alt="Fabric macro texture detail"
+          fill
+          className="object-cover transition-transform duration-700 group-hover:scale-110"
+          sizes="(max-width: 768px) 100vw, 60vw"
+        />
+        <div className="absolute bottom-8 left-8 text-black/50 text-xs tracking-[0.3em] font-serif uppercase z-10">
           Macro Texture 02
         </div>
       </div>
 
       {/* Image 3: Model Pose */}
-      <div className="h-[500px] md:h-[800px] w-full bg-slate-900 relative group overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-        <div className="absolute bottom-8 left-8 text-white/50 text-xs tracking-[0.3em] font-serif uppercase">
+      <div className="h-[500px] md:h-[800px] w-full relative group overflow-hidden bg-slate-100">
+        <Image
+          src="https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?q=80&w=1200"
+          alt="Model fit and form"
+          fill
+          className="object-cover transition-transform duration-700 group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, 60vw"
+        />
+        <div className="absolute bottom-8 left-8 text-white/50 text-xs tracking-[0.3em] font-serif uppercase z-10">
           Fit & Form 03
         </div>
       </div>

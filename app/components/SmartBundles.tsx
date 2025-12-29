@@ -1,4 +1,5 @@
 import { FiShoppingBag, FiTag, FiStar } from "react-icons/fi";
+import Image from "next/image";
 
 export default function SmartBundles() {
   const bundles = [
@@ -13,8 +14,8 @@ export default function SmartBundles() {
       rating: 4.9,
       reviews: 128,
       tag: "Best Seller",
-      // Placeholder gradients for bundle images
-      bgPattern: "bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-slate-700 via-slate-900 to-black"
+      image: "https://images.unsplash.com/photo-1594938328870-9623159c8c99?q=80&w=800",
+      alt: "Folded premium men's clothing"
     },
     {
       id: 2,
@@ -27,7 +28,8 @@ export default function SmartBundles() {
       rating: 4.8,
       reviews: 85,
       tag: "Summer Essential",
-      bgPattern: "bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-gray-200 via-gray-400 to-gray-600"
+      image: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?q=80&w=800",
+      alt: "White cotton fabric texture"
     },
     {
       id: 3,
@@ -40,7 +42,8 @@ export default function SmartBundles() {
       rating: 5.0,
       reviews: 42,
       tag: "Trending",
-      bgPattern: "bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-amber-700 via-amber-900 to-black"
+      image: "https://images.unsplash.com/photo-1621600411688-4be93cd68504?q=80&w=800",
+      alt: "Couple wearing comfortable loungewear"
     }
   ];
 
@@ -77,7 +80,7 @@ export default function SmartBundles() {
               className="group bg-white rounded-sm overflow-hidden shadow-2xl hover:shadow-[0_20px_40px_-15px_rgba(255,255,255,0.1)] transition-all duration-500 cursor-pointer flex flex-col h-full"
             >
               {/* Card Image Area */}
-              <div className={`h-64 relative overflow-hidden ${bundle.bgPattern}`}>
+              <div className="h-80 relative overflow-hidden bg-gray-100">
                 {/* Badge */}
                 <div className="absolute top-4 left-4 z-20">
                   <span className="bg-brand-accent text-white text-xs font-bold px-3 py-1 uppercase tracking-wider shadow-md">
@@ -91,12 +94,14 @@ export default function SmartBundles() {
                   {bundle.save}
                 </div>
 
-                {/* Simulated Product Image (since no assets) */}
-                <div className="absolute inset-0 flex items-center justify-center group-hover:scale-105 transition-transform duration-700">
-                   <span className="text-white/20 font-serif text-8xl font-bold opacity-30 select-none">
-                     {bundle.id}
-                   </span>
-                </div>
+                {/* Product Image */}
+                <Image
+                  src={bundle.image}
+                  alt={bundle.alt}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
+                />
 
                 {/* Overlay on Hover */}
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-300"></div>

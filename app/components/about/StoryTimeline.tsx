@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 export default function StoryTimeline() {
   const [progress, setProgress] = useState(0);
@@ -28,22 +29,30 @@ export default function StoryTimeline() {
     {
       title: "The Source",
       desc: "Hand-picked combed cotton from the finest fields.",
-      year: "01"
+      year: "01",
+      image: "https://images.unsplash.com/photo-1606744837616-56c9a5c6a6eb?q=80&w=800",
+      alt: "Cotton plant close up"
     },
     {
       title: "The Craft",
       desc: "Knitted by artisans with 20+ years of experience.",
-      year: "02"
+      year: "02",
+      image: "https://images.unsplash.com/photo-1605256585681-455837661b18?q=80&w=800",
+      alt: "Textile machinery"
     },
     {
       title: "The Test",
       desc: "Washed, stretched, and tested for Dhaka's humidity.",
-      year: "03"
+      year: "03",
+      image: "https://images.unsplash.com/photo-1550920400-0e54d5d9c24b?q=80&w=800",
+      alt: "Fabric texture detail"
     },
     {
       title: "The Promise",
       desc: "Delivered to your door with a guarantee of satisfaction.",
-      year: "04"
+      year: "04",
+      image: "https://images.unsplash.com/photo-1512418490979-92798cec1380?q=80&w=800",
+      alt: "Package delivery"
     }
   ];
 
@@ -77,11 +86,16 @@ export default function StoryTimeline() {
                   // Even Row, Left Side (Visual Right in row-reverse? No, row-reverse swaps visual.)
                   // Row-Reverse: [Item 3, Item 2, Item 1]
                   // DOM 1 (Here): Visual Right.
-                  // We want Year on Visual Right for Even?
-                  // Let's stick to the original logic:
-                  // Even: Year on "one side", Text on "other".
-                  <div className="p-8 bg-gray-50 rounded-sm border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                    <span className="text-6xl font-serif text-brand-dark/10 font-bold">{step.year}</span>
+                  <div className="relative h-64 w-full overflow-hidden rounded-sm border border-gray-100 shadow-sm hover:shadow-md transition-shadow group">
+                    <Image
+                      src={step.image}
+                      alt={step.alt}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      sizes="(max-width: 768px) 100vw, 500px"
+                    />
+                    <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+                    <span className="absolute bottom-4 right-4 text-6xl font-serif text-white/20 font-bold z-10">{step.year}</span>
                   </div>
                 ) : (
                   // Odd Row, Left Side (Visual Left)
@@ -116,8 +130,16 @@ export default function StoryTimeline() {
                 <div className="hidden md:block">
                   {idx % 2 !== 0 ? (
                     // Odd Row, Right Side (Visual Right)
-                    <div className="p-8 bg-gray-50 rounded-sm border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                      <span className="text-6xl font-serif text-brand-dark/10 font-bold">{step.year}</span>
+                    <div className="relative h-64 w-full overflow-hidden rounded-sm border border-gray-100 shadow-sm hover:shadow-md transition-shadow group">
+                      <Image
+                        src={step.image}
+                        alt={step.alt}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-700"
+                        sizes="(max-width: 768px) 100vw, 500px"
+                      />
+                      <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+                      <span className="absolute bottom-4 right-4 text-6xl font-serif text-white/20 font-bold z-10">{step.year}</span>
                     </div>
                   ) : (
                     // Even Row, Right Side (Visual Left? No, Visual Left is the other one in row-reverse)

@@ -1,4 +1,5 @@
 import { FiBox, FiShield, FiTruck, FiDollarSign } from "react-icons/fi";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -30,18 +31,17 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right Side: Image Placeholder */}
+        {/* Right Side: Image */}
         <div className="relative bg-slate-800 h-[35vh] min-h-[250px] md:h-full w-full order-1 md:order-2 overflow-hidden group">
-          {/*
-            In a real scenario, use Next.js <Image /> here.
-            Using a CSS pattern for the placeholder to match the mockup's "Fusion" feel.
-          */}
-          <div className="absolute inset-0 bg-[linear-gradient(45deg,#1e293b_25%,transparent_25%,transparent_75%,#1e293b_75%,#1e293b),linear-gradient(45deg,#1e293b_25%,transparent_25%,transparent_75%,#1e293b_75%,#1e293b)] bg-[length:20px_20px] bg-[position:0_0,10px_10px] opacity-20"></div>
-
-          <div className="absolute bottom-8 right-8 md:bottom-32 bg-white p-4 text-black shadow-lg">
-            <p className="font-bold text-sm">📷 Lifestyle Shot</p>
-            <p className="text-xs text-gray-500">Models wearing premium collection</p>
-          </div>
+          <Image
+            src="https://images.unsplash.com/photo-1622519407650-3df9883f76a5?auto=format&fit=crop&w=1200&q=80"
+            alt="Man wearing premium black t-shirt"
+            fill
+            className="object-cover object-top transition-transform duration-1000 group-hover:scale-105"
+            priority
+          />
+          {/* Subtle Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/50 via-transparent to-transparent opacity-60"></div>
         </div>
       </section>
 
