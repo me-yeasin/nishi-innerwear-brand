@@ -1,13 +1,17 @@
-import { FiShoppingBag, FiTag, FiStar } from "react-icons/fi";
+"use client";
+
+import { FiShoppingBag, FiTag, FiStar, FiEye } from "react-icons/fi";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function SmartBundles() {
+  const [hoveredId, setHoveredId] = useState<number | null>(null);
+
   const bundles = [
     {
       id: 1,
       title: "The Gentleman's Trio",
       subtitle: "3x Premium Cotton Briefs",
-      bangla: "জেনলম্যানস ট্রায়ো (৩টি ব্রিফ)",
       price: "1,250",
       originalPrice: "1,500",
       save: "Save 17%",
@@ -21,7 +25,6 @@ export default function SmartBundles() {
       id: 2,
       title: "Summer Breeze Kit",
       subtitle: "3x Breathable Vests",
-      bangla: "সামার ব্রিজ কিট (৩টি ভেস্ট)",
       price: "950",
       originalPrice: "1,200",
       save: "Save 20%",
@@ -35,14 +38,13 @@ export default function SmartBundles() {
       id: 3,
       title: "Couple's Comfort Set",
       subtitle: "Matching Loungewear Pack",
-      bangla: "কাপল কমফোর্ট সেট",
       price: "2,500",
       originalPrice: "3,200",
       save: "Save 22%",
       rating: 5.0,
       reviews: 42,
       tag: "Trending",
-      image: "https://images.unsplash.com/photo-1621600411688-4be93cd68504?q=80&w=800",
+      image: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?q=80&w=800",
       alt: "Couple wearing comfortable loungewear"
     }
   ];
@@ -65,10 +67,8 @@ export default function SmartBundles() {
           <h2 className="font-serif text-3xl md:text-5xl text-white mb-4">
             Smart Saver Bundles
           </h2>
-          <p className="bangla text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
-            বেশি কিনুন, বেশি সাশ্রয় করুন। আপনার প্রতিদিনের প্রিমিয়াম কালেকশন এখন বান্ডেল অফারে।
-            <br/>
-            <span className="text-sm font-sans opacity-70">(Buy more, save more. Your daily premium essentials now in bundle offers.)</span>
+          <p className="font-sans text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
+            Buy more, save more. Your daily premium essentials now in bundle offers.
           </p>
         </div>
 
@@ -78,6 +78,8 @@ export default function SmartBundles() {
             <div
               key={bundle.id}
               className="group bg-white rounded-sm overflow-hidden shadow-2xl hover:shadow-[0_20px_40px_-15px_rgba(255,255,255,0.1)] transition-all duration-500 cursor-pointer flex flex-col h-full"
+              onMouseEnter={() => setHoveredId(bundle.id)}
+              onMouseLeave={() => setHoveredId(null)}
             >
               {/* Card Image Area */}
               <div className="h-80 relative overflow-hidden bg-gray-100">
@@ -103,8 +105,13 @@ export default function SmartBundles() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
                 />
 
-                {/* Overlay on Hover */}
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-300"></div>
+                {/* Overlay on Hover with Quick View */}
+                <div className={`absolute inset-0 bg-black/40 transition-opacity duration-300 flex items-center justify-center ${hoveredId === bundle.id ? 'opacity-100' : 'opacity-0'}`}>
+                   <button className="bg-white text-brand-dark px-6 py-3 rounded-full font-bold text-sm uppercase tracking-wider transform translate-y-4 hover:scale-105 transition-all duration-300 shadow-lg flex items-center gap-2 group/view">
+                      <FiEye className="w-4 h-4 text-brand-accent" />
+                      Quick View
+                   </button>
+                </div>
               </div>
 
               {/* Card Content */}
@@ -121,7 +128,6 @@ export default function SmartBundles() {
                 <h3 className="font-serif text-2xl text-brand-dark mb-1 group-hover:text-brand-accent transition-colors">
                   {bundle.title}
                 </h3>
-                <p className="bangla text-sm text-text-muted mb-4">{bundle.bangla}</p>
                 <p className="text-xs text-text-muted uppercase tracking-wider mb-6 pb-6 border-b border-gray-100 flex-1">
                   {bundle.subtitle}
                 </p>

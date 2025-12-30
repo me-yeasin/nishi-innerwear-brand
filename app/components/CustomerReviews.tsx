@@ -15,7 +15,6 @@ export default function CustomerReviews() {
       rating: 5,
       date: "2 days ago",
       text: "I was skeptical about ordering innerwear online in Bangladesh, but the quality blew me away. The cotton is genuinely breathable for Dhaka heat.",
-      bangla: "অনলাইনে ইনওয়ার অর্ডার করতে ভয় পাচ্ছিলাম, কিন্তু কোয়ালিটি দেখে আমি মুগ্ধ। ঢাকার গরমে পরার জন্য একদম পারফেক্ট।",
       verified: true,
       initial: "R"
     },
@@ -26,7 +25,6 @@ export default function CustomerReviews() {
       rating: 5,
       date: "1 week ago",
       text: "Ordered the 3-pack bundle for my husband. He says it's the most comfortable brand he's worn. The packaging was also very premium.",
-      bangla: "স্বামীর জন্য বান্ডেল প্যাক অর্ডার করেছিলাম। সে খুবই পছন্দ করেছে। প্যাকেজিংটাও খুব প্রিমিয়াম ছিল।",
       verified: true,
       initial: "S"
     },
@@ -37,7 +35,6 @@ export default function CustomerReviews() {
       rating: 4,
       date: "3 weeks ago",
       text: "Great color retention. I've washed them 5 times and the black is still deep black. Highly recommended for the price.",
-      bangla: "কালার গ্যারান্টি সত্যি। ৫ বার ধোয়ার পরেও কালো রং নতুনের মতোই আছে। দাম অনুযায়ী সেরা।",
       verified: true,
       initial: "T"
     },
@@ -48,7 +45,6 @@ export default function CustomerReviews() {
       rating: 5,
       date: "1 month ago",
       text: "Delivery was super fast, got it the next day in Uttara. The material is very soft and doesn't shrink after washing.",
-      bangla: "ডেলিভারি খুব দ্রুত ছিল, পরদিনই পেয়েছি। কাপড়টা খুবই সফট আর ধোয়ার পরে ছোট হয়ে যায় না।",
       verified: true,
       initial: "N"
     },
@@ -59,7 +55,6 @@ export default function CustomerReviews() {
       rating: 5,
       date: "2 months ago",
       text: "The fit is perfect. Usually, XXL sizes in local brands are tight, but this one is true to size. Will buy again.",
-      bangla: "ফিটিং একদম পারফেক্ট। সাধারণত লোকাল ব্র্যান্ডের XXL সাইজ টাইট হয়, কিন্তু এটা ঠিকঠাক। আবার কিনব।",
       verified: true,
       initial: "K"
     },
@@ -70,7 +65,6 @@ export default function CustomerReviews() {
       rating: 4,
       date: "3 months ago",
       text: "Value for money. The combo pack is a steal. Wish there were more color options though.",
-      bangla: "টাকা উসুল প্রোডাক্ট। কম্বো প্যাকটা দারুণ। তবে আরও কালার অপশন থাকলে ভালো হতো।",
       verified: true,
       initial: "M"
     },
@@ -81,7 +75,6 @@ export default function CustomerReviews() {
       rating: 5,
       date: "4 months ago",
       text: "Bought for my son. He loves the fabric. It's very soft and comfortable for daily wear.",
-      bangla: "ছেলের জন্য কিনেছি। সে কাপড়টা খুব পছন্দ করেছে। প্রতিদিন পরার জন্য খুব আরামদায়ক।",
       verified: true,
       initial: "F"
     },
@@ -92,7 +85,6 @@ export default function CustomerReviews() {
       rating: 5,
       date: "5 months ago",
       text: "Premium packaging, premium product. Feels like an international brand. Highly recommended.",
-      bangla: "প্যাকেজিং আর প্রোডাক্ট দুইটাই প্রিমিয়াম। একদম বিদেশি ব্র্যান্ডের মতো মনে হয়। সবাইকে রেকমেন্ড করব।",
       verified: true,
       initial: "J"
     }
@@ -125,7 +117,6 @@ export default function CustomerReviews() {
               <span className="font-bold text-brand-dark">4.9/5</span>
               <span className="text-text-muted text-sm">(2,500+ Reviews)</span>
             </div>
-            <p className="bangla text-gray-500 text-lg">আমাদের গ্রাহকদের বাস্তব অভিজ্ঞতা</p>
           </div>
 
           {/* Slider Controls */}
@@ -192,9 +183,6 @@ export default function CustomerReviews() {
                   &ldquo;{review.text}&rdquo;
                 </p>
                 <div className="h-[1px] w-10 bg-gray-100 group-hover:w-full group-hover:bg-brand-accent/30 transition-all duration-500"></div>
-                <p className="bangla text-text-muted text-sm leading-relaxed opacity-90">
-                  {review.bangla}
-                </p>
               </div>
 
             </div>

@@ -8,8 +8,11 @@ export default function Hero() {
       <section className="relative min-h-[calc(100dvh-64px)] md:min-h-[85vh] bg-brand-dark flex flex-col md:grid md:grid-cols-2 overflow-hidden">
 
         {/* Left Side: Content */}
-        <div className="flex flex-col justify-center px-6 py-8 md:p-16 md:pb-48 lg:p-24 lg:pb-56 z-10 text-white order-2 md:order-1 flex-1">
-          <div className="text-brand-accent font-bold tracking-[0.15em] text-xs md:text-base uppercase mb-2 md:mb-4 animate-fade-in-up">
+        <div className="relative flex flex-col justify-center px-6 py-8 md:p-16 md:pb-48 lg:p-24 lg:pb-56 z-10 text-white order-2 md:order-1 flex-1">
+          {/* Noise Overlay */}
+          <div className="absolute inset-0 bg-noise opacity-20 pointer-events-none"></div>
+
+          <div className="relative z-10 text-brand-accent font-bold tracking-[0.15em] text-xs md:text-base uppercase mb-2 md:mb-4 animate-fade-in-up">
             Winter Collection 2025
           </div>
 
@@ -18,9 +21,8 @@ export default function Hero() {
             <span className="italic">Comfort & Class</span>
           </h1>
 
-          <div className="bangla text-lg md:text-2xl text-slate-300 font-light border-l-4 border-brand-accent pl-4 mb-6 md:mb-10">
-            বিলাসবহুল আরাম, যা আপনার প্রতিদিনের সঙ্গী। <br/>
-            <span className="text-sm md:text-lg opacity-70 font-sans">(Luxury comfort, your everyday companion)</span>
+          <div className="text-lg md:text-2xl text-slate-300 font-light border-l-4 border-brand-accent pl-4 mb-6 md:mb-10">
+            Luxury comfort, your everyday companion.
           </div>
 
           <div>
@@ -46,8 +48,8 @@ export default function Hero() {
       </section>
 
       {/* Floating Trust Strip */}
-      <div className="relative z-20 mt-8 md:-mt-20 px-4 max-w-[1300px] mx-auto pb-12">
-        <div className="bg-white rounded shadow-sm border border-gray-100 py-8 px-4 md:px-8">
+      <div className="relative z-20 mt-8 md:-mt-16 lg:-mt-20 px-4 max-w-[1300px] mx-auto pb-12">
+        <div className="bg-white rounded shadow-lg border border-gray-100 py-8 px-4 md:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
 
             {/* Trust Item 1 */}
