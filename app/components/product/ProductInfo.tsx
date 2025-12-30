@@ -42,8 +42,8 @@ export default function ProductInfo() {
       </div>
 
       {/* Description */}
-      <p className="bangla text-text-muted text-lg mb-8 border-l-2 border-brand-accent/30 pl-4">
-        ঢাকার আবহাওয়ার জন্য ১০০% আরামদায়ক। দিনভর ফ্রেশনেস এবং পারফেক্ট ফিটিং।
+      <p className="text-text-muted text-lg mb-8 border-l-2 border-brand-accent/30 pl-4 font-light">
+        Engineered for ultimate comfort in humid climates. Breathable cotton blend ensuring all-day freshness and a perfect fit.
       </p>
 
       {/* Selectors */}
@@ -78,7 +78,7 @@ export default function ProductInfo() {
               Select Size
             </span>
             <Link href="/fit-guide" className="flex items-center gap-1 text-xs text-brand-accent font-bold hover:underline cursor-pointer">
-              <FaRuler /> আমার সাইজ কত? (Size Guide)
+              <FaRuler /> Size Guide
             </Link>
           </div>
           <div className="grid grid-cols-4 gap-2">
