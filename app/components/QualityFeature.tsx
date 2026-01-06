@@ -1,3 +1,5 @@
+"use client";
+
 import { FiSun, FiDroplet, FiCheckCircle } from "react-icons/fi";
 import Image from "next/image";
 
@@ -6,20 +8,17 @@ export default function QualityFeature() {
     {
       icon: <FiSun className="w-6 h-6 text-brand-accent" />,
       title: "100% Breathable Cotton",
-      desc: "Perfect for Bangladesh's humid weather.",
-      bangla: "১০০% আরামদায়ক কটন"
+      desc: "Perfect for Bangladesh's humid weather."
     },
     {
       icon: <FiDroplet className="w-6 h-6 text-brand-accent" />,
       title: "Color Lock Technology",
-      desc: "Vibrant colors that don't fade after washing.",
-      bangla: "রঙের গ্যারান্টি"
+      desc: "Vibrant colors that don't fade after washing."
     },
     {
       icon: <FiCheckCircle className="w-6 h-6 text-brand-accent" />,
       title: "Asian Fit Guarantee",
-      desc: "Tailored specifically for the South Asian physique.",
-      bangla: "পারফেক্ট ফিটিং"
+      desc: "Tailored specifically for the South Asian physique."
     }
   ];
 
@@ -58,8 +57,8 @@ export default function QualityFeature() {
                 Engineered for <br/>
                 <span className="italic text-brand-accent">Ultimate Comfort</span>
               </h2>
-              <p className="bangla text-xl md:text-2xl text-text-muted leading-relaxed opacity-90 max-w-xl">
-                বিলাসবহুল আরাম, যা আপনার প্রতিদিনের সঙ্গী। আমাদের প্রতিটি সুতা বোনা হয়েছে আপনার স্বাচ্ছন্দ্যের কথা ভেবে।
+              <p className="text-xl md:text-2xl text-text-muted leading-relaxed opacity-90 max-w-xl">
+                Luxury you can feel, durability you can trust. Every thread is woven with your absolute comfort in mind.
               </p>
             </div>
 
@@ -73,7 +72,6 @@ export default function QualityFeature() {
                     <h4 className="font-serif text-brand-dark text-xl md:text-2xl mb-1 group-hover:text-brand-accent transition-colors">
                       {feature.title}
                     </h4>
-                    <div className="bangla text-sm text-brand-accent mb-2 opacity-80">({feature.bangla})</div>
                     <p className="text-sm text-text-muted leading-relaxed max-w-sm">{feature.desc}</p>
                   </div>
                 </div>

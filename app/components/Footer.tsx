@@ -100,11 +100,11 @@ export default function Footer() {
             <div className="pt-4 border-t border-white/10">
               <p className="text-[10px] uppercase tracking-widest text-gray-500 mb-3">We Accept</p>
               <div className="flex gap-3 flex-wrap">
-                <span className="px-2 py-1 bg-white rounded text-[10px] font-bold text-pink-600">bKash</span>
-                <span className="px-2 py-1 bg-white rounded text-[10px] font-bold text-orange-600">Nagad</span>
-                <span className="px-2 py-1 bg-white rounded text-[10px] font-bold text-purple-600">Rocket</span>
-                <span className="px-2 py-1 bg-white rounded text-[10px] font-bold text-blue-800">VISA</span>
-                <span className="px-2 py-1 bg-white rounded text-[10px] font-bold text-gray-800">COD</span>
+                <span className="px-3 py-1.5 bg-white rounded shadow-sm border-b-2 border-pink-600 text-[10px] font-bold text-pink-600 tracking-wider">bKash</span>
+                <span className="px-3 py-1.5 bg-white rounded shadow-sm border-b-2 border-orange-600 text-[10px] font-bold text-orange-600 tracking-wider">Nagad</span>
+                <span className="px-3 py-1.5 bg-white rounded shadow-sm border-b-2 border-purple-600 text-[10px] font-bold text-purple-600 tracking-wider">Rocket</span>
+                <span className="px-3 py-1.5 bg-white rounded shadow-sm border-b-2 border-blue-800 text-[10px] font-bold text-blue-800 tracking-wider">VISA</span>
+                <span className="px-3 py-1.5 bg-white rounded shadow-sm border-b-2 border-brand-dark text-[10px] font-bold text-brand-dark tracking-wider">COD</span>
               </div>
             </div>
           </div>

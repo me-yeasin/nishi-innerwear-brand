@@ -72,11 +72,11 @@ export default function Header() {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-accent transition-all group-hover:w-full"></span>
             </Link>
             <Link href="/shop/men" className="cursor-pointer text-sm font-semibold text-brand-dark hover:text-brand-accent transition-colors relative group">
-              Men <span className="bangla text-xs font-normal opacity-80">(পুরুষ)</span>
+              Men
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-accent transition-all group-hover:w-full"></span>
             </Link>
             <Link href="/shop/women" className="cursor-pointer text-sm font-semibold text-brand-dark hover:text-brand-accent transition-colors relative group">
-              Women <span className="bangla text-xs font-normal opacity-80">(মহিলা)</span>
+              Women
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-accent transition-all group-hover:w-full"></span>
             </Link>
             <Link href="/shop/kids" className="cursor-pointer text-sm font-semibold text-brand-dark hover:text-brand-accent transition-colors relative group">
@@ -125,8 +125,8 @@ export default function Header() {
           <div className="md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
             <div className="flex flex-col py-4 px-6 space-y-4">
                <Link href="/shop/new-arrivals" className="cursor-pointer font-semibold text-brand-dark">New Arrivals</Link>
-               <Link href="/shop/men" className="cursor-pointer font-semibold text-brand-dark">Men <span className="bangla text-xs text-gray-500">(পুরুষ)</span></Link>
-               <Link href="/shop/women" className="cursor-pointer font-semibold text-brand-dark">Women <span className="bangla text-xs text-gray-500">(মহিলা)</span></Link>
+               <Link href="/shop/men" className="cursor-pointer font-semibold text-brand-dark">Men</Link>
+               <Link href="/shop/women" className="cursor-pointer font-semibold text-brand-dark">Women</Link>
                <Link href="/shop/kids" className="cursor-pointer font-semibold text-brand-dark">Kids</Link>
                <Link href="/shop/sale" className="cursor-pointer font-bold text-brand-accent">Sale</Link>
             </div>
